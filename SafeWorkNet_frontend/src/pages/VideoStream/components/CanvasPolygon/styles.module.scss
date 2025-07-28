@@ -1,0 +1,164 @@
+@import '../../../../sass/variables.scss';
+
+.bodyModalCanvasPolygon {
+  div:has(label) {
+    width: 100%;
+  }
+  label {
+    color: $white !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    font-family: "Inter", sans-serif !important;
+  }
+
+  label::before, label::after {
+    display: none !important;
+  }
+
+  div[role="alert"] div {
+    color: $warning;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    margin: 0.2rem 0 0.6rem 0;
+  }
+}
+
+.containerCanvas {
+  position: relative;
+  margin-top: 2.5rem;
+
+  .activeDraw, .newSection button, .saveEmptySection {
+    background-color: $cuaternary;
+
+    &.disabled {
+      filter: brightness(0.7);
+      cursor: not-allowed;
+    }
+  }
+
+  .activeDraw, .saveEmptySection {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+  }
+
+  .activeDraw {
+    left: 0;
+
+    img {
+      width: 1rem;
+      transform: scale(1.5);
+      margin-right: 0.4rem;
+    }
+  }
+
+  .saveEmptySection {
+    right: 0;
+  }
+
+  .newSection {
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    transform: translateX(-53%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      margin: 0 0.3rem;
+    }
+
+    .selectorSections {
+      color: $white;
+      position: relative;
+      margin: 0 0.4rem;
+
+      .hideOption {
+        padding: 0.5rem 2.1rem;
+        visibility: hidden;
+      }
+  
+      .optionsSections {
+        transition: 0.5s;
+        padding: 0.1rem;
+        background: $cuaternary;
+        overflow: hidden;
+        border-radius: 0.4rem;
+        right: 0;
+        top: 0rem;
+        position: absolute;
+
+        &.optionsDisabled {
+          filter: brightness(0.7);
+
+          li {
+            cursor: not-allowed;
+          }
+        }
+  
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0.3rem 0.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+  
+          li {
+            font-weight: 400;
+
+            cursor: pointer;
+            transition: 0.5s;
+
+            &.sectionLi:hover {
+              transform: scale(1.1);
+              font-weight: 600;
+            }
+  
+            &:nth-child(1){
+              padding-bottom: 0.5rem;
+              font-weight: 600;
+              
+              svg {
+                fill: $white;
+                margin-left: 0.2rem;
+                transform: scale(0.7);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .canvasStyle {
+    position: absolute;
+    z-index: 1;
+
+    .canvasButtons {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center !important;
+      height: 2.3rem;
+      margin-bottom: 1rem;
+
+      button {
+        background-color: $cuaternary;
+        margin-left: 0.6rem;
+
+        &.disabled {
+          filter: brightness(0.7);
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  .resourceStyle {
+    padding-top: 3rem;
+  }
+}

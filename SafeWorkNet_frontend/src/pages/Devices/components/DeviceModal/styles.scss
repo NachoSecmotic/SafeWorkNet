@@ -1,0 +1,17 @@
+@import '../../../../sass/variables.scss';  
+.selectANTD{
+  height: auto !important;
+
+  .ant-select-selector{
+    min-height: 2.45rem !important;
+  }
+
+  .ant-select-selection-item, .ant-select-selection-placeholder{
+    height: auto !important;
+    padding: 0rem;
+  }
+
+  .ant-select-clear, .ant-select-arrow {
+    padding: 0rem;
+  }
+}

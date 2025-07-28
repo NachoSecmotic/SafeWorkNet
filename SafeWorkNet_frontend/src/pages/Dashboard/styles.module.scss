@@ -1,0 +1,125 @@
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 24px;
+}
+
+.selectContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.resetButton {
+  background-color: #34978B;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.chartContainer {
+  display: flex;
+  justify-content: space-between;
+  //flex-wrap: wrap;
+  gap: 16px;
+  width: calc(75% - 32px);
+  max-width: calc(75% - 32px);
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+.barChart {
+  flex: 1 1 45%;
+  min-width: 300px;
+  max-width: 1000px;
+}
+
+.pieChart {
+  flex: 1 1 45%;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.specificContainer {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-bottom: 24px;
+  padding: 10px;
+}
+
+.chartTitle {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin: 24px;
+}
+
+// Por el punto del proyecto se decide parar la historia de usuario de los estilos.
+// Pendiente reajustar la totalidad una vez incluidas todas las gráficas.
+// Revisar los estilos iniciales incluidos en los div de los diferentes charts.
+
+.pieCard{
+  width: calc(25% - 32px);
+  max-width: calc(480px - 32px);
+  min-width: calc(480px - 32px);
+  aspect-ratio: 1;
+  margin: 16px auto;
+  border-radius: 8px;
+  background-color: #507F70;
+  box-shadow: 0px 16px 40px rgba(247, 242, 242, 0.5);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card50{
+  width: 100%;
+  min-width: calc(480px - 32px);
+  height: 480px;
+  margin: 16px auto;
+  border-radius: 8px;
+  background-color: #507F70;
+  box-shadow: 0px 16px 40px rgba(247, 242, 242, 0.5);
+  position: relative;
+  padding: 30px;
+}
+
+.barCard{
+  width: calc(75% - 32px);
+  min-width: calc(480px - 32px);
+  min-height: 480px;
+  margin: 16px auto;
+  border-radius: 8px;
+  background-color: #507F70;
+  box-shadow: 0px 16px 40px rgba(247, 242, 242, 0.5);
+  position: relative;
+  padding: 8px;
+}
+
+.lineCard{
+  width: calc(75% - 32px);
+  min-width: calc(480px - 32px);
+  min-height: 480px;
+  margin: 16px auto;
+  border-radius: 8px;
+  background-color: #507F70;
+  box-shadow: 0px 16px 40px rgba(247, 242, 242, 0.5);
+  position: relative;
+}
+
+.hourlyCard{
+  // Comentadas hasta querer una card cuadrada y pequeña
+  width: calc(75% - 32px);
+  // max-width: calc(480px - 32px);
+  min-width: calc(480px - 32px);
+  // aspect-ratio: 1;
+  margin: 16px auto;
+  border-radius: 8px;
+  background-color: #507F70;
+  box-shadow: 0px 16px 40px rgba(247, 242, 242, 0.5);
+  position: relative;
+}

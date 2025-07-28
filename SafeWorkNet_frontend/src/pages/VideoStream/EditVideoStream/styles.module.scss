@@ -1,0 +1,93 @@
+@import '../../../sass/variables.scss';
+
+.containerEditVideoStream {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem 5rem;
+
+  .titleHeader {
+    color: $primary;
+    font-weight: bold;
+  }
+
+  .formEdit {
+    width: 30%;
+    padding: 0 1rem;
+
+    label {
+      color: $white !important;
+      font-size: 1.1rem !important;
+      font-weight: 600 !important;
+      font-family: "Inter", sans-serif !important;
+    }
+  
+    label::before {
+      display: none !important;
+    }
+  
+    div > span {
+      padding: 0.375rem 0.75rem;
+      height: 2.5rem;
+    }
+  
+    div[role="alert"] div {
+      color: $warning;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: "Inter", sans-serif;
+      margin: 0.2rem 0 0.6rem 0;
+    }
+  
+    button {
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: "Inter", sans-serif;
+      box-shadow: 0 0.2rem 0.2rem $shadow;
+      height: 2.5rem;
+      padding: 0.5rem 1rem;
+      
+      &:active {
+        transform: scale(0.98) !important;
+      }
+    }
+  }
+
+  .streamPreView {
+    width: 70%;
+    padding: 0 1rem;
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+
+  .pReview {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+
+    .pReviewTitle {
+      font-size: 1.5rem;
+      width: 30%;
+      color: $primary;
+      margin-top: 0.7rem;
+    }
+
+    .pReviewModels {
+      display: flex;
+      flex-wrap: wrap;
+      color: $cuaternary;
+
+      span {
+        background-color: $white;
+        margin: 0.5rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 0.5rem;
+        box-shadow: 0px 3px 10px $shadow;
+      }
+    }
+
+  }
+  
+}

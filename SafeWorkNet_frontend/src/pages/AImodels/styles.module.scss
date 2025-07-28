@@ -1,0 +1,85 @@
+@import '../../sass/variables.scss';
+
+.containerAImodels{
+  margin: 1.5rem 0;
+  padding-bottom: 3rem;
+
+  @media (max-width: $lg) {
+    max-width: 90% !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  @media (max-width: $md) {
+    overflow-x: scroll;
+  }
+
+  .notRegisters {
+    margin-top: 10rem;
+  }
+}
+   
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotate360 3s linear infinite;
+  margin-bottom: 1rem;
+  img{
+    width: 50px;
+    height: 50px;
+    filter: invert(1);
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cvsecSwitch {
+  margin-top: 1.5rem;
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  .containerSwitch {
+    display: flex;
+    border: 0.15rem solid $cuaternary;
+    border-radius: 2rem;
+    position: relative;
+
+    .optionSwitch {
+      color: $white;
+      z-index: 9;
+      padding: 0.7rem;
+      min-width: 13rem;
+      max-width: 13rem;
+      text-align: center;
+      &:hover {
+        cursor: pointer;
+      }
+      &.selected {
+        color: $cuaternary;
+        font-weight: bold;
+      }
+    }
+
+    .buttonSwitch {
+      position: absolute;
+      color: transparent;
+      width: 12.5rem;
+      height: 2.45rem;
+      top: 4px;
+      border-radius: 2rem;
+      z-index: 1;
+      background-color: $white;
+      transition: 0.5s;
+      transform: translate(4px);
+    }
+  }
+}

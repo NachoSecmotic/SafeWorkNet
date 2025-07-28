@@ -1,0 +1,69 @@
+@import '../../../sass/variables.scss';
+
+.titleHeader {
+    color: $primary;
+    font-weight: bold;
+  }
+.titleHeader1 {
+  color: $primary;
+  font-weight: bold;
+  text-align: left;
+}
+.titleHeader2 {
+  color: $primary;
+  font-weight: bold;
+  text-align: left;
+}
+.titleHeader3 {
+  color: $white;
+  font-weight: bold;
+  text-align: left;
+}
+.rowEdit {
+  justify-content: center;
+  margin-top: 40px;
+}
+.pReview {
+  color: $primary;
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 30px;
+}
+.notificationList{
+  margin-top:0px ;
+}
+.notificationItem{
+  text-align: left;
+}
+.notificationTitle{
+  color: $primary;
+}
+.preview{
+  margin-left: 40px;
+}
+.notificationItemUser{
+  margin-top: 10px;
+}
+.saveNotificationsChanges{
+  margin-top: 20px;
+  margin-bottom: 60px;
+  background-color: $cuaternary; 
+}
+.historyTitle{
+  color: $primary;
+  font-weight: bold;
+}
+.historyDescriptionTitle{
+  color: $primary;
+
+}
+.historyDescription{
+  color: $white;
+}
+.customDivider {
+  border-color: $primary;
+}
+.selectANTD{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
