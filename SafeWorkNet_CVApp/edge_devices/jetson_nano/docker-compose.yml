@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+
+  cv_app:
+    image: gitlab.secmotic.com:5050/secureye/ai-models/ai-models_dev:latest-jetson-jetpack4
+    container_name: cv_app
+    ipc: host
+    network_mode: host
+    runtime: nvidia
+    env_file: .env
+    privileged: true
+    volumes:
+      - /tmp/argus_socket:/tmp/argus_socket
+      - /tmp/.X11-unix/:/tmp/.X11-unix
+      - /tmp/.docker.xauth:/tmp/.docker.xauth
+    environment:
+      - DISPLAY=:0
+      - XAUTHORITY=/tmp/.docker.xauth

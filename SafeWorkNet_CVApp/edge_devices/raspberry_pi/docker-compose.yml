@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+
+  cv_app:
+    image: gitlab.secmotic.com:5050/secureye/ai-models/ai-models_dev:latest-arm64
+    container_name: cv_app
+    ipc: host
+    network_mode: host
+    env_file: .env
+    privileged: true
+    volumes:
+      - /run/udev:/run/udev:ro

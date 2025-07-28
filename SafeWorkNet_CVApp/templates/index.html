@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RTSP to WebRTC Stream</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        video {
+            width: 80%; /* Adjust size as needed */
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <video id="video" controls autoplay></video>
+    <script>
+        var pc = new RTCPeerConnection({
+            iceServers: [{ urls: "stun:stun.l.google.com:19302" }]
+        });
+        
+        // Handle incoming tracks
+        pc.ontrack = function(event) {
+            var el = document.getElementById('video');
+            el.srcObject = event.streams[0];
+        };
+        pc.onconnectionstatechange = event => {
+            console.log('Connection State:', pc.connectionState);
+        };
+        pc.oniceconnectionstatechange = e => console.log('ICE connection State:', pc.iceConnectionState);
+        pc.onicecandidateerror = e => console.log('ICE Candidate Error:', e);
+
+            // Add transceiver for receiving video
+        pc.addTransceiver('video', { direction: 'recvonly' });
+        pc.onicecandidateerror = event => {
+            console.error('ICE Candidate Error:', event);
+        };
+        pc.onerror = event => {
+            console.error('Peer Connection Error:', event);
+        };
+
+        // Create offer and set local description
+        pc.createOffer().then(function(offer) {
+            return pc.setLocalDescription(offer);
+        }).then(function() {
+            // Send the offer to the server
+            return fetch('/offer', {
+                body: JSON.stringify({
+                    sdp: pc.localDescription.sdp,
+                    type: pc.localDescription.type
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST'
+            });
+        }).then(function(response) {
+            // Get the answer from the server
+            return response.json();
+        }).then(function(answer) {
+            // Set the remote description with the answer
+            return pc.setRemoteDescription(new RTCSessionDescription(answer));
+        }).catch(function(e) {
+            console.error(e);
+        });
+    </script>
+</body>
+</html>

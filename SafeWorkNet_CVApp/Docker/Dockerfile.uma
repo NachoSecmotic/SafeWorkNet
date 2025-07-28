@@ -1,0 +1,40 @@
+# Imagen base con CUDA 12.2 y Ubuntu 22.04
+FROM nvidia/cuda:12.2.0-base-ubuntu22.04
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Instala dependencias del sistema y FFmpeg
+RUN apt-get update && apt-get install -y \
+    wget git curl xz-utils libgl1 libglib2.0-0 libsm6 libxext6 libxrender-dev \
+    software-properties-common ffmpeg python3 python3-pip && \
+    rm -rf /var/lib/apt/lists/*
+
+# Verifica la versión de FFmpeg instalada
+RUN ffmpeg -version
+
+# Instala dependencias de Python y actualiza pip
+RUN python3 -m pip install --upgrade pip
+
+# Instala TensorRT **exactamente en la versión 8.5.3.1**
+RUN python3 -m pip install nvidia-pyindex && \
+    python3 -m pip install --extra-index-url https://pypi.ngc.nvidia.com tensorrt==8.5.3.1
+
+# Instala ONNX y dependencias necesarias para correr los modelos exportados
+RUN python3 -m pip install --no-cache-dir \
+    onnx==1.12.0 onnxslim onnxruntime-gpu ultralytics minio python-dotenv opencv-python-headless
+
+# Copia el código fuente
+COPY src/ .
+
+# Copia las variables de entorno
+COPY .env .env
+
+# Configura variables de entorno para TensorRT
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
+ENV NVIDIA_REQUIRE_CUDA="cuda>=12.2"
+ENV TERM=linux
+
+# Comando de inicio
+CMD ["python3", "main.py"]
