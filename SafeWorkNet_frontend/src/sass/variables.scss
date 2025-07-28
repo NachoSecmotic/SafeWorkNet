@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+
+/*Colors*/
+$primary: #37E0CC;
+$secondary: #1F5B58;
+$tertiary: #1F2221;
+$cuaternary: #34978B;
+$blackgroundBody: #f3f3f3;
+$blackgroundSwitch: #D9D9D9;
+$backgroundTableHeader: #456B72;
+$backgroundPolygon: #00ffe124;
+$black: #000000;
+$white: #ffffff;
+$grey-1: #828282;
+$grey-2: #E0E0E0;
+$warning: #ff0000;
+$shadow: #2e2e2ed2;
+$shadow2: #616161;
+$shadow3: #a0a0a0;
+
+/*Grid*/
+/*These values represent the lower limit for each breakpoint*/
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;

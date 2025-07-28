@@ -1,0 +1,94 @@
+@import '../../sass/variables.scss';
+
+.containerHeader {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  height: 15vh;
+  margin: 0;
+  padding: 1rem;
+
+  @media (max-width: $sm) {
+    height: 5rem;
+  }
+
+  .imgSecurEye{
+    @media (max-width: $md) {
+      width: 15rem;
+    }
+    @media (max-width: $sm) {
+      width: 10rem;
+    }
+  }
+
+  .containerButtonHeader{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 0.5rem;
+
+    button {
+      background: transparent;
+      border: none;
+
+      .imgIconProfile {
+        @media (max-width: $md) {
+          width: 3.5rem;
+        }
+        @media (max-width: $sm) {
+          width: 3rem;
+        }
+      }
+
+      .chevronDown{
+        fill: $primary;
+        margin-left: 0.5rem;
+        transition: 0.5s;
+      }
+    }
+    .menuButtonHeader{
+      position: absolute;
+      color: $white;
+      right: 8.5rem;
+      cursor: pointer;
+      width: 11rem;
+      height: 4rem;
+      overflow: hidden;
+
+      @media (max-width: $sm) {
+        top: 5rem;
+        right: 2rem;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: $primary;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: 0.5s;
+        position: absolute;
+        left: 12rem;
+
+        &.menuVisible {
+          left: 0rem;
+        }
+
+        li {
+          white-space: nowrap;
+          padding: 0.1rem;
+          transition: 0.5s;
+          &:hover {
+            transform: scale(1.05);
+          }
+          img {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+   

@@ -1,0 +1,43 @@
+@import '../../sass/variables.scss';
+
+.imgPreview {
+    border : 8px solid $primary;
+    border-radius : 30px;
+}
+
+.modalPreview {
+    border : 8px solid $primary;
+    border-radius : 30px;
+    width: 100%;
+    height: auto;
+  }
+
+.spinnerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate360 3s linear infinite;
+    img{
+      width: 50px;
+      height: 50px;
+      filter: invert(1);
+    }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.containerVideoStream {
+  width: 854px;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}

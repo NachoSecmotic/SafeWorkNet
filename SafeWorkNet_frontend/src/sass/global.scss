@@ -1,0 +1,41 @@
+@import './variables.scss';
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hidden{
+  display: none !important;
+}
+
+.contentCentred {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.contentCentredColumn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contentCentredToRight {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+}
+
+.noticeNotRegister {
+  color: $white;
+  text-align: center;
+  font-size: xx-large;
+  padding: 3rem;
+}

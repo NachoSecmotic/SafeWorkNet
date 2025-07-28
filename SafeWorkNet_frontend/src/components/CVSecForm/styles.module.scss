@@ -1,0 +1,62 @@
+@import '../../sass/variables.scss';
+
+.containerCVSecForm {
+    padding: 1rem;
+    width: 30rem;
+  
+  .fieldForm {
+    margin: 0.5rem 0 1.1rem 0;
+    word-wrap: break-word;
+
+    label, input {
+      width: 100%;
+    }
+    
+    label {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      &.labelInline {
+        width: auto;
+        margin-left: 0.5rem;
+      }
+    }
+
+    textarea {
+      min-height: 3rem;
+      max-height: 15rem;
+    }
+
+    input[type="reset"], input[type="button"] {
+      margin-top: 3rem;
+      background-color: $cuaternary;
+      color: $white;
+      font-weight: 500;
+      border: 1px solid $cuaternary;
+      border-radius: 2rem;
+      box-shadow: 0 0.2rem 0.8rem $shadow;
+      transition: 0.5s;
+
+      &:active {
+        transform: scale(0.98);
+        box-shadow: 0 0 0 $shadow;
+      }
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      width: 1rem;
+      box-shadow: 0 0 0 transparent;
+      border-color: transparent;
+      &:checked {
+        background-color: $primary;
+      }
+    }
+
+    .msgValidate {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: $warning;
+    }
+  }
+}
+   

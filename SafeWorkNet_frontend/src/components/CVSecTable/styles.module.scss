@@ -1,0 +1,282 @@
+@import "../../sass/variables.scss";
+
+.cvSecTable {
+  z-index: 0;
+  width: 100%;
+
+  &.xScrolabeld {
+    @media (max-width: $md) {
+      min-width: 180%;
+    }
+  }
+
+  .titleHeader {
+    margin-bottom: 1.5rem !important;
+    z-index: -1;
+    color: $white;
+  }
+
+  .containerHeaderActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+
+    .searchInput {
+      margin-right: auto;
+    }
+
+    .button {
+      margin-left: 1rem;
+      background: $cuaternary;
+      border-radius: 4rem;
+      display: flex;
+
+      &.disabledButton {
+        opacity: 0.5;
+        cursor: not-allowed;
+
+        &:active {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+
+    th,
+    td {
+      min-width: 2rem;
+      max-width: 2rem;
+
+      div {
+        word-wrap: break-word;
+      }
+    }
+
+    th.firstCell,
+    td.firstCell {
+      min-width: 1rem;
+      max-width: 1rem;
+
+      .checkBoxContainer {
+        padding: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        .checkBoxElement {
+          width: 1.1rem;
+          height: 1.1rem;
+          border-radius: 0.2rem;
+          cursor: pointer;
+
+          position: relative;
+          background: none;
+
+          .check {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    th.secondCell,
+    td.secondCell {
+      min-width: 1rem !important;
+      max-width: 1rem !important;
+    }
+
+    .tableHeader {
+      background: $backgroundTableHeader;
+
+      .checkBoxElement {
+        border: 1px solid $white;
+
+        .check {
+          fill: $white;
+        }
+      }
+
+      .literalHeader {
+        padding: 1rem 0;
+        font-weight: 500;
+        text-align: center;
+        color: $white;
+
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .sorteable {
+            margin-left: 0.6rem;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+
+            .iconSort {
+              transform: scale(0.8);
+              &.selectedSort {
+                fill: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .rowBody {
+      .checkBoxElement {
+        border: 1px solid $primary;
+
+        .check {
+          fill: $primary;
+        }
+      }
+
+      .literalBody {
+        padding: 1rem 0.5rem;
+        font-weight: 500;
+        text-align: center;
+        color: $primary;
+      }
+
+      .containerActions {
+        padding: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+          border: none;
+          background: none;
+          transition: 0.1s;
+
+          &:active {
+            transform: scale(0.9);
+          }
+        }
+      }
+      .autoWrapCell.collapsed {
+        display: flex;
+        flex-direction: column;
+        word-break: break-all;
+      }
+    }
+  }
+
+  .containerNumerRows {
+    color: $white;
+    margin-left: 1rem;
+    position: relative;
+
+    span {
+      margin-right: 4.5rem;
+    }
+
+    .options {
+      height: 8.5rem;
+      width: 4rem;
+      transition: 0.5s;
+      background: $cuaternary;
+      overflow: hidden;
+      border-radius: 0.3rem;
+      position: absolute;
+      right: 0;
+      top: -0.2rem;
+      z-index: 1;
+
+      &.hideOptions {
+        height: 2.1rem;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0.3rem 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        li {
+          cursor: pointer;
+
+          &:nth-child(1) {
+            padding-bottom: 0.5rem;
+            svg {
+              fill: $white;
+              margin-left: 0.2rem;
+              transform: scale(0.7);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .containerPagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+
+    .buttons {
+      background: none;
+      border: none;
+
+      svg {
+        fill: $primary;
+        transform: scale(1.2);
+        transition: 0.1s;
+
+        &:active {
+          transform: scale(1);
+        }
+      }
+    }
+
+    .containerNumbers {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 2rem;
+
+      .numbers {
+        color: $primary;
+
+        &.selected {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-top: 0.1rem;
+        }
+      }
+    }
+  }
+}
+
+.bodyModalDelete {
+  .containerItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1rem 1rem 0 1rem;
+
+    .itemToDelete {
+      align-items: center;
+      padding: 0.5rem;
+      background: $cuaternary;
+      border-radius: 0.3rem;
+      margin: 0.3rem;
+      font-weight: bold;
+    }
+  }
+}

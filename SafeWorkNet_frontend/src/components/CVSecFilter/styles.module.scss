@@ -1,0 +1,66 @@
+@import '../../sass/variables.scss';
+
+.containerFilter {
+  z-index: 1;
+  width: 5rem;
+  height: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: $cuaternary;
+  border-radius: 0.4rem;
+  position: relative;
+  border: none;
+
+  .chevronDown {
+    fill: $secondary;
+    transform: scale(0.7);
+  }
+
+  .optionsList {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    top: 4rem;
+    margin: 0 -100rem;
+    background: linear-gradient(0deg,  rgba(31,34,33,1) 10%, rgba(31,91,88,1) 90%);
+    color: $primary;
+
+    &.hideOptions{
+      display: none;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      
+      .checkbox {
+        margin-right: 0.5rem;
+        background-color: transparent;
+        border: 1px solid $primary;
+        width: 1rem;
+        height: 1rem;
+        position: relative;
+
+        .check {
+          fill: $primary;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 0.8rem;
+        }
+      }
+
+      li {
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+  }
+}
+   

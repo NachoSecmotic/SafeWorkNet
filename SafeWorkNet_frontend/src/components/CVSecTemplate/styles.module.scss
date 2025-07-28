@@ -1,0 +1,24 @@
+@import '../../sass/variables.scss';
+
+.containerTemplate {
+   z-index: 1;
+   width: 100%;
+   height: 100vh;
+   position: absolute;
+   display: flex;
+   align-content: flex-start; 
+   flex-wrap: wrap; 
+
+  .containerPageDashboard{
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+  }
+
+  .containerRestPage{
+    flex: 0 1 100%;
+  }
+}
+   
